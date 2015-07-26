@@ -17,7 +17,7 @@ class BeefBox < Proxy::Module
     @beefport = 3000
     @beefpid  = nil
     @hookname = 'hook.js'    
-    @jsfile   = "http://#{Context.get.iface[:ip_saddr]}:#{@beefport}/#{@hookname}"
+    @jsfile   = "http://#{Context.get.ifconfig[:ip_saddr]}:#{@beefport}/#{@hookname}"
 
     while !beef_path_valid?
       print '[BEEFBOX] Please specify the BeEF installation path: '.yellow
