@@ -15,7 +15,7 @@ class HackTitle < Proxy::Module
     if response.content_type =~ /^text\/html.*/
       Logger.info "Hacking http://#{request.host}#{request.url} title tag"
       # make sure to use sub! or gsub! to update the instance
-      response.body.sub!( '</title>', '</title><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      response.body.sub!( '</title>', '</title>
         <script src="fartscroll.js"></script>
         <script>
         $(document).ready(function() {
