@@ -22,7 +22,6 @@ class HackTitle < Proxy::Module
             // Ensure the page always has more scrolling
             $(document).scroll(function() {
                 while ((window.pageYOffset + window.innerHeight) >= $(this).height() - (window.innerHeight / 2)) {
-                    $('ul').append('<li>Testing.</li>');
                 }
             }).scroll();
             fartscroll(800);
