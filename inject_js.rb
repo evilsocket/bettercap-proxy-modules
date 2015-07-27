@@ -12,7 +12,7 @@ This project is released under the GPL 3 license.
 class InjectJS < Proxy::Module
   def on_request( request, response )
     # is it a html page?
-    if response.content_type == 'text/html'
+    if response.content_type =~ /^text\/html.*/
       Logger.info "Injecting javascript file into http://#{request.host}#{request.url} page"
       # get the local interface address and HTTPD port
       localaddr = Context.get.ifconfig[:ip_saddr]

