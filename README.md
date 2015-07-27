@@ -4,4 +4,4 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * **inject_js.rb** - Will inject a custom javascript ( served from the builtin HTTP server ) into every html page.
 * **beefbox.rb** - Similar to inject_js, but specialized to work with the [BeEF framework](http://beefproject.com).
 * **fartscroll.rb** - As you load the page it keeps making farting noises
-* **lemonpart.rb** - redirects the user after 3 seconds to lemonparty.org (NFSW)
+* **lemonparty.rb** - redirects the user after 3 seconds to lemonparty.org (NFSW)
