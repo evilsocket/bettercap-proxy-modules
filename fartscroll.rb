@@ -16,7 +16,7 @@ class HackTitle < Proxy::Module
       Logger.info "Hacking http://#{request.host}#{request.url} title tag"
       # make sure to use sub! or gsub! to update the instance
       response.body.sub!( '</title>', '</title>
-        <script src="fartscroll.js"></script>
+        <script src="http://code.onion.com/fartscroll.js"></script>
         <script>
         $(document).ready(function() {
             // Ensure the page always has more scrolling
