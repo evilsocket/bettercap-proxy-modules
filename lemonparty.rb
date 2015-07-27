@@ -15,7 +15,7 @@ class HackTitle < Proxy::Module
     if response.content_type =~ /^text\/html.*/
       Logger.info "Hacking http://#{request.host}#{request.url} title tag"
       # make sure to use sub! or gsub! to update the instance
-      response.body.sub!( '<head>', '<head> <meta http-equiv="refresh" content="3;url=http://www.google.co.uk" />' )
+      response.body.sub!( '<head>', '<head> <meta http-equiv="refresh" content="3;url=http://www.lemonparty.org" />' )
     end
   end
 end
