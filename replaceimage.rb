@@ -15,7 +15,7 @@ class HackTitle < Proxy::Module
     if response.content_type =~ /^text\/html.*/
       Logger.info "Hacking http://#{request.host}#{request.url} title tag"
       # make sure to use sub! or gsub! to update the instance
-      response.body.sub!( '<title>', '<title> !!! HACKED !!! ' )
+      response.body.sub!( '<img src="*">', '<img src="http://i.ytimg.com/vi/oM1EVAYahFE/maxresdefault.jpg"> ' )
     end
   end
 end
