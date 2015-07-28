@@ -10,3 +10,4 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * **resizetext.rb** - resizes the text on the page constantly
 * **rickroll.rb** - Rick roll users with a youtube video full page
 * **shakescreen.rb**  - shakes the screen
+* **cookiestealer** you need to set up a page to capture the get request and alter the plugin to your capture url.
