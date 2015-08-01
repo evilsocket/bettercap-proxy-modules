@@ -20,7 +20,7 @@ class flipimages < Proxy::Module
   Flip all images upside down
 */
 img {
-  /*-webkit-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);*/
 }
 
