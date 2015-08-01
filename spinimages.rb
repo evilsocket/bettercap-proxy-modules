@@ -15,12 +15,21 @@ class Spinimages < Proxy::Module
     if response.content_type =~ /^text\/html.*/
       Logger.info "Hacking http://#{request.host}#{request.url} title tag"
       # make sure to use sub! or gsub! to update the instance
-      response.body.sub!( '</head>', '<style>
+      response.body.sub!( '</head>', '<<style>
+@-moz-keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100%   { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  0%   { -webkit-transform: rotate(0deg); }
+  100%   { -webkit-transform: rotate(360deg); }
+}
+
 /*
   Spin all images
 */ 
 img {
-  /*-webkit-animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;*/
 }
 
