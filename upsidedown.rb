@@ -16,11 +16,10 @@ class Upsidedown < Proxy::Module
       Logger.info "Hacking http://#{request.host}#{request.url} title tag"
       # make sure to use sub! or gsub! to update the instance
       response.body.sub!( '</head>', '<style>
-/* 
-  Turn every website upside down 
-*/ 
-body { 
-  /*-webkit-transform: rotate(180deg);*/ 
+/body {
+transform:rotate(180deg);
+-ms-transform:rotate(180deg);
+-webkit-transform:rotate(180deg);
 }
 
 </style>
