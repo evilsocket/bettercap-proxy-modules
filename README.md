@@ -15,3 +15,4 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * **flipimages.rb** Flips all images 180
 * **spinimages.rb** Makes pages spin round - Hurts your Eyes!
 * **upsidedown.rb** Turns page upside down
+* **comicsans.rb** Chnages all text to comic sans
