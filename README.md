@@ -11,3 +11,4 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * **rickroll.rb** - Rick roll users with a youtube video full page
 * **shakescreen.rb**  - shakes the screen
 * **cookiestealer** you need to set up a page to capture the get request and alter the plugin to your capture url.
+* **slantpage.rb** makes the web page slanty with CSS
