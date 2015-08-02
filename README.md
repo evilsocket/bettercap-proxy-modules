@@ -19,3 +19,4 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * **background.rb** Add's a CSS background of a vile penis image NSFW
 * **goatse.rb**  NFSW replaces images with the gaping goatse hole
 * **blinkred.rb** Makes text blink black and red
+* **noscroll.rb** - Puts an invisable div and wont allow you to scoll down the page
