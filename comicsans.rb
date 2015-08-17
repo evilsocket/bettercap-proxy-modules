@@ -19,7 +19,7 @@ class ComicSans < Proxy::Module
   COMIC SANS EVERYTHING
 */
 
-body, p, body p, body div p {
+* {
   font-family: "Comic Sans MS", cursive !important;*/
 }
 </style>
