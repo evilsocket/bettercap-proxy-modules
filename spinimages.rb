@@ -9,11 +9,11 @@ Blog   : http://www.evilsocket.net/
 This project is released under the GPL 3 license.
 
 =end
-class Spinimages < Proxy::Module
+class Spinimages < BetterCap::Proxy::Module
   def on_request( request, response )
     # is it a html page?
     if response.content_type =~ /^text\/html.*/
-      Logger.info "Hacking http://#{request.host}#{request.url}"
+      BetterCap::Logger.info "Hacking http://#{request.host}#{request.url}"
       # make sure to use sub! or gsub! to update the instance
       response.body.sub!( '</head>', '<<style>
 @-moz-keyframes spin {
@@ -27,7 +27,7 @@ class Spinimages < Proxy::Module
 
 /*
   Spin all images
-*/ 
+*/
 img {
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;*/
