@@ -20,3 +20,6 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * **goatse.rb**  NFSW replaces images with the gaping goatse hole
 * **blinkred.rb** Makes text blink black and red
 * **noscroll.rb** - Puts an invisable div and wont allow you to scoll down the page
+
+
+[![Join the chat at https://gitter.im/evilsocket/bettercap-proxy-modules](https://badges.gitter.im/evilsocket/bettercap-proxy-modules.svg)](https://gitter.im/evilsocket/bettercap-proxy-modules?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
