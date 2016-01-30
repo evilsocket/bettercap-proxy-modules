@@ -27,15 +27,30 @@ class BeefBox < BetterCap::Proxy::Module
   def initialize
     @beefport = 3000
     @beefpid  = nil
-    @hookname = 'hook.js'
-    @jsfile   = "http://#{BetterCap::Context.get.ifconfig[:ip_saddr]}:#{@beefport}/#{@hookname}"
+    @hookname = '/hook.js'
 
     while !beef_path_valid?
       print '[BEEFBOX] Please specify the BeEF installation path: '.yellow
       @@beefpath = gets.chomp
     end
 
+    # read BeEF's config.yaml
+    unless Dir.exists?(@@beefpath) and File.exists?(@@beefpath + 'config.yaml')
+      begin
+        require 'yaml'
+        raw = File.read(@@beefpath + '/config.yaml')
+        cfg = YAML.load(raw)
+        @beefport = cfg['beef']['http']['port'].to_i
+        @hookname = cfg['beef']['http']['hook_file']
+      rescue
+        BetterCap::Logger.warn "[BEEFBOX] Could not parse BeEF config file. Using defaults."
+      end
+    end
+
+    @jsfile = "http://#{BetterCap::Context.get.ifconfig[:ip_saddr]}:#{@beefport}#{@hookname}"
+
     BetterCap::Logger.warn "[BEEFBOX] Starting BeEF ..."
+    BetterCap::Logger.info "[BEEFBOX] Using hook: #{@jsfile}"
 
     @beefpid = fork do
       exec "cd '#{@@beefpath}' && ./beef"
