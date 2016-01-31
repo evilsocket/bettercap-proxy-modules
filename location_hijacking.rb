@@ -24,6 +24,7 @@ class LocationHijacking < BetterCap::Proxy::Module
 
   def initialize
     raise BetterCap::Error, "No --location option specified for the proxy module." if @@location.nil?
+    raise BetterCap::Error, "Must specify preceding protocol for location." if !@@location.start_with?('http://', 'https://')
   end
 
   def on_request( request, response )
