@@ -41,8 +41,7 @@ class LocationHijacking < BetterCap::Proxy::Module
           end
         end
       end
-      BetterCap::Logger.info request.url
-      BetterCap::Logger.info request.host
+
       if !found && !@@location.include?(request.host)
         BetterCap::Logger.info "No Location header found, adding one now for #{@@location}"
         # Replace HTTP Response code with 302
