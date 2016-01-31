@@ -13,8 +13,12 @@ This project is released under the GPL 3 license.
 require 'time'
 require 'net/http'
 require 'uri'
-require 'ftpd'
 require 'tmpdir'
+begin
+  require 'ftpd'
+rescue LoadError
+  raise BetterCap::Error, "You need to install the 'ftpd' gem for this module to work."
+end
 
 # Driver class for FTPd
 class Driver
