@@ -29,3 +29,4 @@ class ReplaceImages < BetterCap::Proxy::Module
       response.body.gsub! %r/["'][https:\/\/]*[^\s]+\.(png|jpg|jpeg|bmp|gif)["']/i, @image_url
     end
   end
+end
