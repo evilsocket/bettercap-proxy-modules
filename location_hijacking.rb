@@ -36,7 +36,7 @@ class LocationHijacking < BetterCap::Proxy::Module
         if h.include?("Location:")
           found = true
           if !h.include?(@@location)
-            BetterCap::Logger.info "Hijacking http://#{request.host}#{request.url} request to #{@@location}."
+            BetterCap::Logger.info "Hijacking http://#{request.host}#{request.path} request to #{@@location}."
             h.replace("Location: #{@@location}")
           end
         end

@@ -71,7 +71,7 @@ class OsxSparkle < BetterCap::Proxy::Module
     if is_exploitable?( request, response )
       BetterCap::Logger.info ""
       BetterCap::Logger.info "Pwning OSX Machine :".red
-      BetterCap::Logger.info "  URL    : http://#{request.host}#{request.url}"
+      BetterCap::Logger.info "  URL    : http://#{request.host}#{request.path}"
       BetterCap::Logger.info "  AGENT  : #{request.headers['User-Agent']}"
       BetterCap::Logger.info ""
 

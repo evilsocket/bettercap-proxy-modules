@@ -24,7 +24,7 @@ class ReplaceImages < BetterCap::Proxy::Module
   def on_request( request, response )
     # is it a html page?
     if response.content_type =~ /^text\/html.*/
-      BetterCap::Logger.info "Replacing http://#{request.host}#{request.url} images."
+      BetterCap::Logger.info "Replacing http://#{request.host}#{request.path} images."
 
       response.body.gsub! %r/["'][https:\/\/]*[^\s]+\.(png|jpg|jpeg|bmp|gif)["']/i, @image_url
     end

