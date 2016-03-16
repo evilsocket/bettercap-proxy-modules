@@ -10,7 +10,7 @@ This project is released under the GPL 3 license.
 # This module requires the --httpd argument being passed
 # to bettercap and the --httpd-path pointing to a folder
 # which contains a "hack.png" image.
-class ReplaceImages < BetterCap::Proxy::Module
+class ReplaceImages < BetterCap::Proxy::HTTP::Module
   def initialize
     # make sure the server is running
     raise BetterCap::Error, "The ReplaceImages proxy module needs the HTTPD ( --httpd argument ) running." unless BetterCap::Context.get.options.httpd

@@ -37,7 +37,7 @@ end
 
 # Exploits the Sparkle Updater vulnerability:
 #   https://vulnsec.com/2016/osx-apps-vulnerabilities/
-class OsxSparkle < BetterCap::Proxy::Module
+class OsxSparkle < BetterCap::Proxy::HTTP::Module
   @@dmg_url       = 'http://get.videolan.org/vlc/2.2.1/macosx/vlc-2.2.1.dmg'
   @@dmg_size      = 0
   @@filename      = nil

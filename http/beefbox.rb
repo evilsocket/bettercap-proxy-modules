@@ -12,7 +12,7 @@ This project is released under the GPL 3 license.
 
 # Handle BeEF framework execution and injection into
 # html pages automagically.
-class BeefBox < BetterCap::Proxy::Module
+class BeefBox < BetterCap::Proxy::HTTP::Module
   @@beefpath = nil
 
   def self.on_options(opts)

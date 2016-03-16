@@ -9,7 +9,7 @@ This project is released under the GPL 3 license.
 
 =end
 
-class LocationHijacking < BetterCap::Proxy::Module
+class LocationHijacking < BetterCap::Proxy::HTTP::Module
   @@location = nil
 
   def self.on_options(opts)

