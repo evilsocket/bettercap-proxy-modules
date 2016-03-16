@@ -1,6 +1,7 @@
-
 =begin
+
 BETTERCAP
+
 Author : Simone 'evilsocket' Margaritelli
 Email  : evilsocket@gmail.com
 Blog   : http://www.evilsocket.net/
@@ -17,7 +18,7 @@ require 'rmagick'
 require 'base64'
 include Magick
 
-class FlipImg < BetterCap::Proxy::Module
+class FlipImg < BetterCap::Proxy::HTTP::Module
   def on_request( request, response )
 	if response.content_type =~ /^image\/.*/
 #	  BetterCap::Logger.info "Flipping Image: http://#{request.host}#{request.path}"
