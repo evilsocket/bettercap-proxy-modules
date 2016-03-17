@@ -12,13 +12,14 @@ This project is released under the GPL 3 license.
 # which contains a "hack.png" image.
 class ReplaceImages < BetterCap::Proxy::HTTP::Module
   def initialize
+    opts = BetterCap::Context.get.options.servers
     # make sure the server is running
-    raise BetterCap::Error, "The ReplaceImages proxy module needs the HTTPD ( --httpd argument ) running." unless BetterCap::Context.get.options.httpd
+    raise BetterCap::Error, "The ReplaceImages proxy module needs the HTTPD ( --httpd argument ) running." unless opts.httpd
     # make sure the file we need actually exists
-    raise BetterCap::Error, "No hack.png file found in the HTTPD path ( --httpd-path argument ) '#{BetterCap::Context.get.options.httpd_path}'" \
-      unless File.exist? "#{BetterCap::Context.get.options.httpd_path}/hack.png"
+    raise BetterCap::Error, "No hack.png file found in the HTTPD path ( --httpd-path argument ) '#{opts.httpd_path}'" \
+      unless File.exist? "#{opts.httpd_path}/hack.png"
 
-    @image_url = "\"http://#{BetterCap::Context.get.ifconfig[:ip_saddr]}:#{BetterCap::Context.get.options.httpd_port}/hack.png\""
+    @image_url = "\"http://#{BetterCap::Context.get.ifconfig[:ip_saddr]}:#{opts.httpd_port}/hack.png\""
   end
 
   def on_request( request, response )
