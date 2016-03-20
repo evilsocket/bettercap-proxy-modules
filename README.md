@@ -14,3 +14,4 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 ### TCP Proxy Modules
 
 * tcp/**debug.rb** - Simply hex-dumps all TCP traffic going through the proxy.
+* tcp/**sshdowngrade.rb** - If possible, perform a SSH 2.x -> 1.x downgrade attack.

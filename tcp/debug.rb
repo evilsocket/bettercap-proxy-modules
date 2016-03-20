@@ -1,3 +1,14 @@
+=begin
+
+BETTERCAP
+
+Author : Simone 'evilsocket' Margaritelli
+Email  : evilsocket@gmail.com
+Blog   : http://www.evilsocket.net/
+
+This project is released under the GPL 3 license.
+
+=end
 class Debug < BetterCap::Proxy::TCP::Module
   # Received when the victim is sending data to the upstream server.
   def on_data( event )
