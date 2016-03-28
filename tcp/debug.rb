@@ -10,6 +10,14 @@ This project is released under the GPL 3 license.
 
 =end
 class Debug < BetterCap::Proxy::TCP::Module
+  meta(
+    'Name'        => 'Debug',
+    'Description' => 'Simple TCP debugging module.',
+    'Version'     => '1.0.0',
+    'Author'      => "Simone 'evilsocket' Margaritelli",
+    'License'     => 'GPL3'
+  )
+
   # Received when the victim is sending data to the upstream server.
   def on_data( event )
     # You can access the request data being sent using the event object:

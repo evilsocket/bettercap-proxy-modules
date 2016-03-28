@@ -10,6 +10,14 @@ This project is released under the GPL 3 license.
 
 =end
 class SSHDowngrade < BetterCap::Proxy::TCP::Module
+  meta(
+    'Name'        => 'SSHDowngrade',
+    'Description' => 'Downgrades SSH from protocol 2.* to 1.* .',
+    'Version'     => '1.0.0',
+    'Author'      => "Simone 'evilsocket' Margaritelli",
+    'License'     => 'GPL3'
+  )
+
   def on_response( event )
     if event.data =~ /^(SSH-([\d\.]+).+).*/
       banner  = $1.strip

@@ -10,6 +10,14 @@ This project is released under the GPL 3 license.
 =end
 
 class LocationHijacking < BetterCap::Proxy::HTTP::Module
+  meta(
+    'Name'        => 'LocationHijacking',
+    'Description' => 'Hijack location header.',
+    'Version'     => '1.0.0',
+    'Author'      => "Francesco 'hex7c0' Carnielli, Nicholas Starke",
+    'License'     => 'GPL3'
+  )
+
   @@location = nil
 
   def self.on_options(opts)

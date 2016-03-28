@@ -11,6 +11,14 @@ This project is released under the GPL 3 license.
 # to bettercap and the --httpd-path pointing to a folder
 # which contains a "hack.png" image.
 class ReplaceImages < BetterCap::Proxy::HTTP::Module
+  meta(
+    'Name'        => 'ReplaceImages',
+    'Description' => 'Replace all images on web pages.',
+    'Version'     => '1.0.0',
+    'Author'      => "Simone 'evilsocket' Margaritelli",
+    'License'     => 'GPL3'
+  )
+
   def initialize
     opts = BetterCap::Context.get.options.servers
     # make sure the server is running

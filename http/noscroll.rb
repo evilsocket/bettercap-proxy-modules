@@ -10,6 +10,14 @@ This project is released under the GPL 3 license.
 
 =end
 class Noscroll < BetterCap::Proxy::HTTP::Module
+  meta(
+    'Name'        => 'Noscroll',
+    'Description' => 'Puts an invisible div over every HTML page.',
+    'Version'     => '1.0.0',
+    'Author'      => "Simone 'evilsocket' Margaritelli",
+    'License'     => 'GPL3'
+  )
+
   def on_request( request, response )
     # is it a html page?
     if response.content_type =~ /^text\/html.*/
