@@ -27,7 +27,7 @@ class ReplaceImages < BetterCap::Proxy::HTTP::Module
     raise BetterCap::Error, "No hack.png file found in the HTTPD path ( --httpd-path argument ) '#{opts.httpd_path}'" \
       unless File.exist? "#{opts.httpd_path}/hack.png"
 
-    @image_url = "\"http://#{BetterCap::Context.get.ifconfig[:ip_saddr]}:#{opts.httpd_port}/hack.png\""
+    @image_url = "\"http://#{BetterCap::Context.get.iface.ip}:#{opts.httpd_port}/hack.png\""
   end
 
   def on_request( request, response )

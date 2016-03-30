@@ -135,11 +135,11 @@ class OsxSparkle < BetterCap::Proxy::HTTP::Module
     FileUtils.cp( @@filename, @@temp_dir )
 
     server           = Ftpd::FtpServer.new(Driver.new(@@temp_dir))
-    server.interface = BetterCap::Context.get.ifconfig[:ip_saddr]
+    server.interface = BetterCap::Context.get.iface.ip
     server.port      = 2100
     server.start
 
-    @@rel_notes.gsub!( 'LOCAL_ADDRESS', BetterCap::Context.get.ifconfig[:ip_saddr].to_s )
+    @@rel_notes.gsub!( 'LOCAL_ADDRESS', BetterCap::Context.get.iface.ip )
     @@rel_notes.gsub!( 'FILENAME', File.basename(@@filename) )
 
     BetterCap::Logger.info "[#{'OSX SPARKLE'.green}] FTP server started on ftp://#{server.interface}:#{server.port}/ ..."

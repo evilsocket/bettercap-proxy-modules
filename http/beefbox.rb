@@ -55,7 +55,7 @@ class BeefBox < BetterCap::Proxy::HTTP::Module
       end
     end
 
-    @jsfile = "http://#{BetterCap::Context.get.ifconfig[:ip_saddr]}:#{@beefport}#{@hookname}"
+    @jsfile = "http://#{BetterCap::Context.get.iface.ip}:#{@beefport}#{@hookname}"
 
     BetterCap::Logger.warn "[BEEFBOX] Starting BeEF ..."
     BetterCap::Logger.info "[BEEFBOX] Using hook: #{@jsfile}"
