@@ -10,6 +10,7 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * http/**replace_images.rb** - Replace all images with a custom one.
 * http/**rickroll.rb** - Inject an iframe with the (in)famous RickRoll video in autoplay mode.
 * http/**hack_title.rb** - Add a "HACKED" text to website titles.
+* http/**replace_file.rb** - Replace downloaded files on the fly with custom ones.
 
 ### TCP Proxy Modules
 
