@@ -51,6 +51,6 @@ class NetSed < BetterCap::Proxy::TCP::Module
 
   def check_opts()
     raise BetterCap::Error, "No search pattern specified." if @@search.nil?
-    raise BetterCap::Error, "No replace pattern specified." if @@search.nil?
+    raise BetterCap::Error, "No replace pattern specified." if @@replace.nil?
   end
 end
