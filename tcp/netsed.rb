@@ -27,11 +27,11 @@ class NetSed < BetterCap::Proxy::TCP::Module
     opts.separator ""
 
     opts.on( '--netsed-search SEARCH', 'Search pattern.' ) do |v|
-      @@search = Regexp.new(v)
+      @@search = v
     end
 
     opts.on( '--netsed-replace REPLACE', 'Replace pattern.' ) do |v|
-      @@replace = Regexp.new(v)
+      @@replace = v
     end
   end
 
