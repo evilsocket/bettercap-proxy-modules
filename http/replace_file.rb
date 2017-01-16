@@ -6,7 +6,7 @@ Email  : evilsocket@gmail.com
 Blog   : http://www.evilsocket.net/
 This project is released under the GPL 3 license.
 =end
-
+require 'uri'
 class ReplaceFile < BetterCap::Proxy::HTTP::Module
   meta(
     'Name'        => 'ReplaceFile',
@@ -27,6 +27,7 @@ class ReplaceFile < BetterCap::Proxy::HTTP::Module
 
     opts.on( '--file-replace FILENAME', 'File to use in order to replace the ones matching the extension.' ) do |v|
       @@filename = File.expand_path v
+      #@@fileNameExtenstion = File.basename v
       unless File.exists?(@@filename)
         raise BetterCap::Error, "#{@@filename} file does not exist."
       end
@@ -40,9 +41,14 @@ class ReplaceFile < BetterCap::Proxy::HTTP::Module
   end
 
   def on_request( request, response )
+    url = request.path
+    uri = URI.parse(url)
+    @@fileNameExtenstion = File.basename(uri.path)
+
     if request.path.include?(".#{@@extension}")
       BetterCap::Logger.info "Replacing http://#{request.host}#{request.path} with #{@@filename}."
-
+      BetterCap::Logger.warn "Setting attachment file name to: #{@@fileNameExtenstion}."
+      response['Content-Disposition'] = "attachment; filename=" + @@fileNameExtenstion
       response['Content-Length'] = @@payload.bytesize
       response.body = @@payload
     end
