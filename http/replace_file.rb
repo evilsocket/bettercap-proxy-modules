@@ -27,7 +27,6 @@ class ReplaceFile < BetterCap::Proxy::HTTP::Module
 
     opts.on( '--file-replace FILENAME', 'File to use in order to replace the ones matching the extension.' ) do |v|
       @@filename = File.expand_path v
-      #@@fileNameExtenstion = File.basename v
       unless File.exists?(@@filename)
         raise BetterCap::Error, "#{@@filename} file does not exist."
       end
