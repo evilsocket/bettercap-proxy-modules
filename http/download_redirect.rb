@@ -3,7 +3,7 @@
 BETTERCAP
 Author : Mohamed Abdelbasset Elnouby - @SymbianSyMoh / @Seekurity
 Email  : MaeBaset@Seekurity.com
-Blog   : http://www.Seekurit.com/blog
+Blog   : www.Seekurit.com/blog
 Usage  : Bettercap -I INTERFACE -T TARGET --proxy-module download_redirect.rb --find-extension EXT --redirect-to-url http(s)://domain.tld/file.ext
 This project is released under the GPL 3 license.
 =end
