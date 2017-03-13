@@ -42,7 +42,7 @@ class ReplaceFile < BetterCap::Proxy::HTTP::Module
   def on_request( request, response )
     if request.path.include?(".#{@@extension}")
       BetterCap::Logger.info "Replacing http://#{request.host}#{request.path} with #{@@filename}."
-
+      response['Content-Type'] = "application/octet-stream"
       response['Content-Length'] = @@payload.bytesize
       response.body = @@payload
     end
