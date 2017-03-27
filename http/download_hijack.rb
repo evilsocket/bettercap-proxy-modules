@@ -23,8 +23,8 @@ class DownloadHijack < BetterCap::Proxy::HTTP::Module
   @@hijackPort = nil
   @@hijackFiles = nil
   @@hijackFile = nil
-  @@hijackedFile = nil
   @@hijackFileSize = nil
+  @@hijackedFile = nil
   BetterCap::Context.get.options.servers.httpd = true
 
   def self.on_options(opts)
