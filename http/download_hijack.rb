@@ -28,6 +28,15 @@ class DownloadHijack < BetterCap::Proxy::HTTP::Module
   BetterCap::Context.get.options.servers.httpd = true
 
   def self.on_options(opts)
+    opts.on( '--httpd', "Enable HTTP server, default to #{'false'}." ) do
+      raise BetterCap::Error, "httpd-server is already in use by DownloadHijack proxy module."
+    end
+    opts.on( '--httpd-port PORT', "Set HTTP server port, default to #{@httpd_port.to_s}." ) do
+      raise BetterCap::Error, "httpd-server is already in use by DownloadHijack proxy module."
+    end
+    opts.on( '--httpd-path PATH', "Set HTTP server path, default to #{@httpd_path} ." ) do
+      raise BetterCap::Error, "httpd-server is already in use by DownloadHijack proxy module."
+    end
     opts.on( '--download-hijack-extensions EXT1,EXT2', 'Comma separated list of file extensions to hijack.' ) do |v|
       @@hijackExtensions = v.downcase.split(',').map(&:strip).reject(&:empty?)
     end
@@ -40,7 +49,6 @@ class DownloadHijack < BetterCap::Proxy::HTTP::Module
   end
 
   def initialize
-    raise BetterCap::Error, "httpd-server is already in use by DownloadHijack proxy module." if @httpd
     raise BetterCap::Error, "No --download-hijack-extensions option specified for the proxy module." if @@hijackExtensions.nil?
     raise BetterCap::Error, "No --download-hijack-path option specified for the proxy module." if @@hijackPath.nil?
     raise BetterCap::Error, "#{@@hijackPath} does not exist." unless Dir.exists?(@@hijackPath)
@@ -52,8 +60,9 @@ class DownloadHijack < BetterCap::Proxy::HTTP::Module
       raise BetterCap::Error, "#{@@hijackPath} is missing a " + "#{@@thisExtension.upcase}" + " file." if @@hijackFiles[0].nil?
       raise BetterCap::Error, "#{@@hijackPath} contains more than one " + "#{@@thisExtension.upcase}" + " file." if @@hijackFiles[1]
     end
-    @httpd = BetterCap::Network::Servers::HTTPD.new( @@hijackPort, @@hijackPath )
-    @httpd.start
+    @downloadHijackServer = BetterCap::Network::Servers::HTTPD.new( @@hijackPort, @@hijackPath )
+    @downloadHijackServer.start
+    BetterCap::Context.get.options.servers.httpd = false
   end
 
   def on_request(request, response)
