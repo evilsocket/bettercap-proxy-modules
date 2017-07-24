@@ -21,8 +21,8 @@ class ReplaceImages < BetterCap::Proxy::HTTP::Module
 	def initialize
 		opts = BetterCap::Context.get.options.servers
 		@imgArray = Dir.entries("#{opts.httpd_path}")
-		@imgArray.pop
-		@imgArray.pop
+		@imgArray.shift
+		@imgArray.shift
 		# make sure the server is running
 		raise BetterCap::Error, "The ReplaceImages proxy module needs the HTTPD ( --httpd argument ) running."	unless opts.httpd
 		# make sure the file we need actually exists  
