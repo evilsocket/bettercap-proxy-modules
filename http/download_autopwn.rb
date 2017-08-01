@@ -3,7 +3,7 @@ BETTERCAP
 Author : Simone 'evilsocket' Margaritelli
 Email  : evilsocket@gmail.com
 Blog   : http://www.evilsocket.net/
-Usage  : bettercap --proxy-module bettercap-proxy-modules/http/download_autopwn.rb --download-autopwn-extensions EXT1,EXT2 --download-autopwn-path bettercap-proxy-modules/http/download_autopwn/ --download-autopwn-port 8042
+Usage  : bettercap --proxy-module bettercap-proxy-modules/http/download_autopwn.rb --download-autopwn-extensions EXT1,EXT2 --download-autopwn-useragents android,ios,linux,macos,windows,ps4 --download-autopwn-path bettercap-proxy-modules/http/download_autopwn/
 This project is released under the GPL 3 license.
 =end
 
