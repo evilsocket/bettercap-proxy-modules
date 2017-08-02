@@ -32,8 +32,7 @@ First, we make a new folder called **xbox** in our `--download-autopwn-path` dir
 
 **1.** `mkdir bettercap-proxy-modules/http/download_autopwn/xbox`
 
-Next, we save our User-Agent string(s) in a file called **user-agents.bettercap**.
-These strings will detect requests coming from xbox users.
+Next, we save our User-Agent string(s) in a file called **user-agents.bettercap**.<br>These strings will detect requests coming from xbox users.
 
 After a quick Google search we find this User-Agent string:
 
