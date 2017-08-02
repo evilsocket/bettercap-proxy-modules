@@ -38,7 +38,7 @@ After a quick Google search we find this User-Agent string:
 
 **Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; Xbox; Xbox One)**
 
-Looks like this string will do the trick: `Xbox`
+Looks like this part of the string will do the trick: `Xbox`
 
 **2.** `echo "Xbox" > bettercap-proxy-modules/http/download_autopwn/xbox/user-agents.bettercap`
 
