@@ -10,7 +10,7 @@ This repository contains some [bettercap](http://www.bettercap.org/) transparent
 * http/**rickroll.rb** - Inject an iframe with the (in)famous RickRoll video in autoplay mode.
 * http/**hack_title.rb** - Add a "HACKED" text to website titles.
 * http/**replace_file.rb** - Replace downloaded files on the fly with custom ones.
-* http/**download_hijack.rb** - Renames local malicious files and redirects the victim's downloads.
+* http/**download_autopwn.rb** - Renames & resizes local payloads and redirects victim's download requests if they match the specified file extensions and User-Agents.
 
 ### TCP Proxy Modules
 
