@@ -40,6 +40,8 @@ After a quick Google search we find this User-Agent string:
 
 Looks like this part of the string will do the trick: `Xbox`
 
+Save it:
+
 **2.** `echo "Xbox" > bettercap-proxy-modules/http/download_autopwn/xbox/user-agents.bettercap`
 
 **3.** Move your payload files to the folder that you just made.
