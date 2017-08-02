@@ -60,7 +60,8 @@ class DownloadAutopwn < BetterCap::Proxy::HTTP::Module
     # Check options
     raise BetterCap::Error, "No --download-autopwn-extensions option specified for the proxy module." if @@autopwnExtensions.nil?
     raise BetterCap::Error, "No --download-autopwn-path option specified for the proxy module." if @@autopwnPath.nil?
-    raise BetterCap::Error, "No --download-autopwn-useragents option specified for the proxy module." if @@autopwnUserAgents.nil?
+    raise BetterCap::Error, "No --download-autopwn-useragents option specified for the proxy module.\n    Either add your own folder or choose from the following: android, ios, linux, macos, ps4, windows." if @@autopwnUserAgents.nil?
+
 
     # Check path and User-Agent folders
     @@autopwnPath += "/" if @@autopwnPath[-1] != "/"
