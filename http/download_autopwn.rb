@@ -65,7 +65,7 @@ class DownloadAutopwn < BetterCap::Proxy::HTTP::Module
     # Check path and User-Agent folders
     @@autopwnPath += "/" if @@autopwnPath[-1] != "/"
     raise BetterCap::Error, "#{@@autopwnPath} does not exist." unless Dir.exists?("#{@@autopwnPath}")
-    @@userAgents = Dir.entries("#{@@autopwnPath}") - ["."] - [".."]
+    @@userAgents = Dir.entries("#{@@autopwnPath}") - [".", ".."]
     raise BetterCap::Error, "#{@@autopwnPath} is empty." unless @@userAgents[0]
 
     # Check User-Agents
