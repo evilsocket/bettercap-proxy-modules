@@ -46,7 +46,8 @@ Save it:
 
 **3.** Move your payload files to the folder that you just made.
 
-![screenshot from 2017-08-02 15-03-01](https://user-images.githubusercontent.com/29265684/28858435-cb289dca-7793-11e7-9f73-45c7b0dc9e2f.png)
+![screenshot from 2017-08-02 15-05-27](https://user-images.githubusercontent.com/29265684/28858479-1fa07fa8-7794-11e7-8dfb-ed09afc1172d.png)
+
 
 **4. Done.**
 
