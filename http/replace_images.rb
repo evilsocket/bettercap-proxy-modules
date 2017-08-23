@@ -3,7 +3,7 @@
 BETTERCAP
 Author : Simone 'evilsocket' Margaritelli & David Kotriksnov (SH4V)
 Email  : evilsocket@gmail.com
-Blog   : http://www.evilsocket.net/
+Blog   : https://www.evilsocket.net/
 This project is released under the GPL 3 license.
 =end
 
