@@ -15,6 +15,7 @@ This repository contains some [bettercap](https://www.bettercap.org/) transparen
 * http/**download_autopwn.rb** - Renames & resizes local payloads and redirects victim's download requests if they match the specified file extensions and User-Agents.
 * http/**download_redirect.rb** - Redirect URLs with specific file extensions to another URL to hijack the download process.
 * http/**noscroll.rb** - Puts an invisible div over every HTML page.
+* http/**keylogger.rb** - Send keystrokes through randomized GET requests.
 
 ### TCP Proxy Modules
 
