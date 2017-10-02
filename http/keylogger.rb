@@ -51,7 +51,7 @@ EOF
 
   def on_request(request, response)
     # Receive keystroke
-    @req = "#{request.host}#{request.path}"
+    @req = "#{request.base_url}#{request.path}"
     if @req.include?("/#{@@destination}?")
       uri = URI.parse("#{@req}")
       keystroke = URI.unescape( uri.query )
