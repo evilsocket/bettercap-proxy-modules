@@ -16,6 +16,7 @@ This repository contains some [bettercap](https://www.bettercap.org/) transparen
 * http/**download_redirect.rb** - Redirect URLs with specific file extensions to another URL to hijack the download process.
 * http/**noscroll.rb** - Puts an invisible div over every HTML page.
 * http/**keylogger.rb** - Send keystrokes through randomized GET requests.
+* http/**ebay_passive_income_generator.rb** - Replace eBay product links with your affiliate link and get a piece of the pie.
 
 ### TCP Proxy Modules
 
