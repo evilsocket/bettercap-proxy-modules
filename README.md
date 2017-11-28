@@ -17,6 +17,7 @@ This repository contains some [bettercap](https://www.bettercap.org/) transparen
 * http/**noscroll.rb** - Puts an invisible div over every HTML page.
 * http/**keylogger.rb** - Send keystrokes through randomized GET requests.
 * http/**ebay_passive_income_generator.rb** - Replace eBay product links with your affiliate link and get a piece of the pie.
+* http/**makemoney.rb** - inject coinhive.com "JS" and make some money.
 
 ### TCP Proxy Modules
 
