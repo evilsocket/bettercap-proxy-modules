@@ -1,4 +1,0 @@
-/* Slightly tilt the page*/
-body {
--webkit-transform: rotate(23deg);
-}
